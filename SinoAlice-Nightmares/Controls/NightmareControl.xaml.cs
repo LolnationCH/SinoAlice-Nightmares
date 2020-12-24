@@ -41,6 +41,8 @@ namespace SinoAlice_Nightmares.Controls
       UpdateTimerLabel();
       SetTextState();
       Timer_btn.IsEnabled = true;
+      if (_timer != null)
+        _timer.Stop();
     }
 
     private void Timer_btn_Click(object sender, RoutedEventArgs e)

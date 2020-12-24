@@ -58,6 +58,7 @@ namespace SinoAlice_Nightmares
           nightControl.Margin = new Thickness(10, 0, 0, 0);
           sp.Children.Add(nightControl);
         }
+        nightmares.Add(nightControl);
       }
       Nightmare_Stack.Children.Add(sp);
     }

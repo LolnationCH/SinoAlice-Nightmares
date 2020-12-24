@@ -1,5 +1,59 @@
 [
   {
+    "Image_path": "Images\\CardS1573.png",
+    "Name": "Red Rose",
+    "Summoning_time": 50,
+    "Summoned_time": 0
+  },
+  {
+    "Image_path": "Images\\CardS1048.png",
+    "Name": "Blue Poppy",
+    "Summoning_time": 80,
+    "Summoned_time": 120
+  },
+  {
+    "Image_path": "Images\\CardS0458.png",
+    "Name": "Ugallu",
+    "Summoning_time": 80,
+    "Summoned_time": 120
+  },
+  {
+    "Image_path": "Images\\CardS2497.png",
+    "Name": "UFO",
+    "Summoning_time": 60,
+    "Summoned_time": 90
+  },
+  {
+    "Image_path": "Images\\CardS0517.png",
+    "Name": "Lindwyrm",
+    "Summoning_time": 80,
+    "Summoned_time": 120
+  },
+  {
+    "Image_path": "Images\\CardS1431.png",
+    "Name": "Dryas",
+    "Summoning_time": 50,
+    "Summoned_time": 100
+  },
+  {
+    "Image_path": "Images\\CardS0480.png",
+    "Name": "Freeze Golem",
+    "Summoning_time": 80,
+    "Summoned_time": 120
+  },
+  {
+    "Image_path": "Images\\CardS2976.png",
+    "Name": "Shadowlord",
+    "Summoning_time": 60,
+    "Summoned_time": 90
+  },
+  {
+    "Image_path": "Images\\CardS1371.png",
+    "Name": "Mau Archelon",
+    "Summoning_time": 60,
+    "Summoned_time": 120
+  },
+  {
     "Image_path": "Images\\CardS0980.png",
     "Name": "Cecilia",
     "Summoning_time": 50,
