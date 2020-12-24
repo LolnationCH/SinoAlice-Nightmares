@@ -1,19 +1,9 @@
 ﻿using SinoAlice_Nightmares.Objects;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace SinoAlice_Nightmares.Controls
@@ -45,6 +35,7 @@ namespace SinoAlice_Nightmares.Controls
 
     public void ResetComponent()
     {
+      Name.Content = nightmareInfo.Name;
       state = TimerState.Initial;
       _time = TimeSpan.FromSeconds(nightmareInfo.Summoning_time);
       UpdateTimerLabel();
@@ -63,7 +54,12 @@ namespace SinoAlice_Nightmares.Controls
 
     private void SetImagePath()
     {
-      this.Image.Source = new BitmapImage(new Uri(nightmareInfo.Image_path));
+      var path = System.IO.Path.GetFullPath(nightmareInfo.Image_path);
+      if (File.Exists(path))
+        this.Image.Source = new BitmapImage(new Uri(path, UriKind.RelativeOrAbsolute));
+      else
+        MessageBox.Show($"Could not find {nightmareInfo.Image_path}", "Image not loaded");
+
     }
 
     private void SetTextState()
@@ -92,6 +88,12 @@ namespace SinoAlice_Nightmares.Controls
 
     private void StartTimer(int interval)
     {
+      if (interval == 0)
+      {
+        OnTimerEnd();
+        return;
+      }
+
       _time = TimeSpan.FromSeconds(interval); 
       UpdateTimerLabel();
 
@@ -111,7 +113,7 @@ namespace SinoAlice_Nightmares.Controls
 
     private void OnTimerEnd()
     {
-      int time = 0;
+      int time = -1;
       switch (this.state)
       {
         case TimerState.Summoning:
@@ -130,7 +132,7 @@ namespace SinoAlice_Nightmares.Controls
       {
         SetTextState();
       });
-      if (time != 0)
+      if (time != -1)
         StartTimer(time);
 
     }

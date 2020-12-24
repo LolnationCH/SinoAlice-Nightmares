@@ -16,11 +16,13 @@
       <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
       <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <Image x:Name="Image" Height="75" Grid.RowSpan="3"/>
-
-    <Label x:Name="State" Content="State" Grid.Row="0" Grid.Column="2"/>
-    <Label x:Name="Timer"  Content="Time remaining : XX:XX:XX" Grid.Row="1" Grid.Column="2"/>
-    <Button x:Name="Timer_btn" Content="Start" Grid.Row="2" Grid.Column="2" Click="Timer_btn_Click"/>
+    <Image x:Name="Image" Height="75" Grid.RowSpan="4"/>
+    
+    <Label x:Name="Name" Content="Name" Grid.Row="0" Grid.Column="2"/>
+    <Label x:Name="State" Content="State" Grid.Row="1" Grid.Column="2"/>
+    <Label x:Name="Timer"  Content="Time remaining : XX:XX:XX" Grid.Row="2" Grid.Column="2"/>
+    <Button x:Name="Timer_btn" Content="Start" Grid.Row="3" Grid.Column="2" Click="Timer_btn_Click"/>
   </Grid>
 </UserControl>

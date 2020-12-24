@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:SinoAlice_Nightmares"
         mc:Ignorable="d"
         ResizeMode="CanResizeWithGrip"
+        Closing="Window_Closing"
         Title="Night01" Height="450" Width="800">
   <Grid>
     <Grid.ColumnDefinitions>

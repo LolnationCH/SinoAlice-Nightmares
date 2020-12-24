@@ -1,12 +1,8 @@
-﻿using Newtonsoft.Json;
-using SinoAlice_Nightmares.Controls;
+﻿using SinoAlice_Nightmares.Controls;
 using SinoAlice_Nightmares.Objects;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -20,23 +16,50 @@ namespace SinoAlice_Nightmares
     List<NightmatreControl> nightmares = new List<NightmatreControl>();
     String _configPath = Directory.GetCurrentDirectory() + "\\Configs\\";
 
+    Settings _settings;
+
     public MainWindow()
     {
       InitializeComponent();
 
+      // Set the window size and other things
+      HandleSettings();    
+
+      // Show the nightmares
       RefreshConfigList();
+    }
+
+    private void HandleSettings()
+    {
+      _settings = DataHandler.GetSettings();
+
+      this.Width = _settings.Width;
+      this.Height = _settings.Height;
     }
 
     private void CreateNightmaresControl(List<NightmareInfo> nightmareInfos)
     {
       nightmares.Clear();
       Nightmare_Stack.Children.Clear();
-      foreach (var nightinfo in nightmareInfos)
+      StackPanel sp = new StackPanel();
+      for (var i = 0; i < nightmareInfos.Count; i++)
       {
+        var nightinfo = nightmareInfos[i];
         var nightControl = new NightmatreControl(nightinfo);
-        nightmares.Add(nightControl);
-        Nightmare_Stack.Children.Add(nightControl);
+        if (i % _settings.NumColumns == 0)
+        {
+          if (i != 0) Nightmare_Stack.Children.Add(sp);
+          sp = new StackPanel();
+          sp.Orientation = Orientation.Horizontal;
+          sp.Children.Add(nightControl);
+        }
+        else
+        {
+          nightControl.Margin = new Thickness(10, 0, 0, 0);
+          sp.Children.Add(nightControl);
+        }
       }
+      Nightmare_Stack.Children.Add(sp);
     }
 
     private void RefreshConfigList()
@@ -70,6 +93,13 @@ namespace SinoAlice_Nightmares
       {
         night.ResetComponent();
       }
+    }
+
+    private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+    {
+      _settings.Width = this.Width;
+      _settings.Height = this.Height;
+      DataHandler.SetSettings(_settings);
     }
   }
 }
