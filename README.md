@@ -6,6 +6,12 @@ Simple timer to keep track of the time for the nightmares.
 
 # How to use
 
-Simply download the latest release and run.
+1. Download the release [release](https://github.com/LolnationCH/SinoAlice-Nightmares/releases/latest) and extract the zip
+2. Run the .exe.
 
-You can modify the nightmare present in the list by either adding a new json file containing the nightmares you want, or by modifying the Default one.
+# Features
+
+- Multiple configurations, allowing flexible timers configuration
+- Can modify the list (adding/removing/ordering) from the app.
+  - All information are fetch from the database, so new nightmares are automaticaly downloaded.
+- Can modify the number of columns shown.
