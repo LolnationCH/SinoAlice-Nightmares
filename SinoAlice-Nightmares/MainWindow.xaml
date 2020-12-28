@@ -8,6 +8,14 @@
         ResizeMode="CanResizeWithGrip"
         Closing="Window_Closing"
         Title="Night01" Height="450" Width="800">
+  <Window.CommandBindings>
+    <CommandBinding Command="New" Executed="NewCommandBinding_Executed"/>
+    <CommandBinding Command="Open" Executed="ModifyCommandBinding_Executed"/>
+  </Window.CommandBindings>
+  <Window.InputBindings>
+    <KeyBinding Key="N" Modifiers="Control" Command="New"/>
+    <KeyBinding Key="O" Modifiers="Control" Command="Open"/>
+  </Window.InputBindings>
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="*"/>
@@ -15,17 +23,30 @@
       <ColumnDefinition Width="100"/>
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
+      <RowDefinition Height="25"/>
       <RowDefinition Height="40"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
 
-    <ComboBox x:Name="nightmare_combobox" HorizontalAlignment="Stretch" Margin="10,10,10,0" VerticalAlignment="Top" SelectionChanged="nightmare_combobox_SelectionChanged"/>
-    <Button x:Name="refresh_btn" Content="Refresh" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="refresh_btn_Click"/>
-    <Button x:Name="reset_btn" Content="Reset" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="reset_btn_Click"/>
+    <Menu x:Name="menu" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="20">
+      <MenuItem Header="_Config">
+        <MenuItem Header="_New..." Command="New" InputGestureText="Ctrl+N"/>
+        <MenuItem Header="_Modify Current Config..." Command="Open" InputGestureText="Ctrl+O"/>
+        <Separator />
+        <MenuItem Header="_Delete" Click="Delete_Click"/>
+        <MenuItem Header="_Exit" Click="Exit_Click"/>
+      </MenuItem>
+      <MenuItem Header="_Settings">
+        <MenuItem Header="_View" Click="View_Click"/>
+      </MenuItem>
+    </Menu>
+
+    <ComboBox x:Name="nightmare_combobox" HorizontalAlignment="Stretch" Margin="10,5,10,0" VerticalAlignment="Top" SelectionChanged="nightmare_combobox_SelectionChanged" Grid.Row="1"/>
+    <Button x:Name="refresh_btn" Content="Refresh" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="76" Click="refresh_btn_Click" Margin="12,0,12,10" Grid.Row="1"/>
+    <Button x:Name="reset_btn" Content="Reset" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="76" Click="reset_btn_Click" Margin="12,0,12,10" Grid.Row="1"/>
 
     <ScrollViewer Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,10,0">
       <StackPanel x:Name="Nightmare_Stack" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        
       </StackPanel>
     </ScrollViewer>
   </Grid>

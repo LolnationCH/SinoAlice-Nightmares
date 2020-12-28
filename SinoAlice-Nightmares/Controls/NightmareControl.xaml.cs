@@ -1,6 +1,7 @@
 ﻿using SinoAlice_Nightmares.Objects;
 using System;
 using System.IO;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -16,7 +17,7 @@ namespace SinoAlice_Nightmares.Controls
     Finished
   }
 
-  public partial class NightmatreControl : UserControl
+  public partial class NightmareControl : UserControl
   {
     private NightmareInfo nightmareInfo;
 
@@ -24,7 +25,7 @@ namespace SinoAlice_Nightmares.Controls
     DispatcherTimer _timer;
     TimeSpan _time;
 
-    public NightmatreControl(NightmareInfo nightmareInfo)
+    public NightmareControl(NightmareInfo nightmareInfo)
     {
       InitializeComponent();
       this.nightmareInfo = nightmareInfo;
@@ -35,7 +36,7 @@ namespace SinoAlice_Nightmares.Controls
 
     public void ResetComponent()
     {
-      Name.Content = nightmareInfo.Name;
+      Name_Label.Content = nightmareInfo.Name;
       state = TimerState.Initial;
       _time = TimeSpan.FromSeconds(nightmareInfo.Summoning_time);
       UpdateTimerLabel();
@@ -56,12 +57,17 @@ namespace SinoAlice_Nightmares.Controls
 
     private void SetImagePath()
     {
-      var path = System.IO.Path.GetFullPath(nightmareInfo.Image_path);
+      var path = System.IO.Path.GetFullPath(nightmareInfo.ImagePath);
       if (File.Exists(path))
         this.Image.Source = new BitmapImage(new Uri(path, UriKind.RelativeOrAbsolute));
       else
-        MessageBox.Show($"Could not find {nightmareInfo.Image_path}", "Image not loaded");
-
+      {
+        using (var client = new WebClient())
+        {
+          client.DownloadFile(nightmareInfo.ImageUrl, nightmareInfo.ImagePath);
+          this.Image.Source = new BitmapImage(new Uri(path, UriKind.RelativeOrAbsolute));
+        }
+      }
     }
 
     private void SetTextState()

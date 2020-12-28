@@ -1,62 +1,92 @@
 [
   {
-    "Image_path": "Images\\CardS1573.png",
-    "Name": "Red Rose",
-    "Summoning_time": 50,
-    "Summoned_time": 0
-  },
-  {
-    "Image_path": "Images\\CardS1048.png",
-    "Name": "Blue Poppy",
-    "Summoning_time": 80,
-    "Summoned_time": 120
-  },
-  {
-    "Image_path": "Images\\CardS0458.png",
-    "Name": "Ugallu",
-    "Summoning_time": 80,
-    "Summoned_time": 120
-  },
-  {
-    "Image_path": "Images\\CardS2497.png",
     "Name": "UFO",
-    "Summoning_time": 60,
-    "Summoned_time": 90
+    "Id": "2497",
+    "UniqueId": "1166",
+    "IsGlobal": true
   },
   {
-    "Image_path": "Images\\CardS0517.png",
+    "Name": "Ugallu",
+    "Id": "458",
+    "UniqueId": "227",
+    "IsGlobal": true
+  },
+  {
+    "Name": "Dryas, Mistletoe Linchpin",
+    "Id": "1431",
+    "UniqueId": "695",
+    "IsGlobal": true
+  },
+  {
     "Name": "Lindwyrm",
-    "Summoning_time": 80,
-    "Summoned_time": 120
+    "Id": "517",
+    "UniqueId": "266",
+    "IsGlobal": true
   },
   {
-    "Image_path": "Images\\CardS1431.png",
-    "Name": "Dryas",
-    "Summoning_time": 50,
-    "Summoned_time": 100
-  },
-  {
-    "Image_path": "Images\\CardS0480.png",
-    "Name": "Freeze Golem",
-    "Summoning_time": 80,
-    "Summoned_time": 120
-  },
-  {
-    "Image_path": "Images\\CardS2976.png",
     "Name": "Shadowlord",
-    "Summoning_time": 60,
-    "Summoned_time": 90
+    "Id": "2976",
+    "UniqueId": "1381",
+    "IsGlobal": true
   },
   {
-    "Image_path": "Images\\CardS1371.png",
+    "Name": "Freeze Golem",
+    "Id": "480",
+    "UniqueId": "241",
+    "IsGlobal": true
+  },
+  {
+    "Name": "Blue Poppy",
+    "Id": "1048",
+    "UniqueId": "505",
+    "IsGlobal": true
+  },
+  {
+    "Name": "Odio, Song of the Black Lily",
+    "Id": "1316",
+    "UniqueId": "638",
+    "IsGlobal": true
+  },
+  {
     "Name": "Mau Archelon",
-    "Summoning_time": 60,
-    "Summoned_time": 120
+    "Id": "1371",
+    "UniqueId": "665",
+    "IsGlobal": true
   },
   {
-    "Image_path": "Images\\CardS0980.png",
-    "Name": "Cecilia",
-    "Summoning_time": 50,
-    "Summoned_time": 0
+    "Name": "Cecilia, the Crimson Banisher",
+    "Id": "980",
+    "UniqueId": "471",
+    "IsGlobal": true
+  },
+  {
+    "Name": "Red Rose",
+    "Id": "1573",
+    "UniqueId": "759",
+    "IsGlobal": true
+  },
+  {
+    "Name": "Library Wisp",
+    "Id": "1108",
+    "UniqueId": "535",
+    "IsGlobal": true
+  },
+  {
+    "Name": "Armored Giant",
+    "Id": "1591",
+    "UniqueId": "768",
+    "IsGlobal": true
+  },
+  {
+    "Name": "Diabolos",
+    "Id": "1417",
+    "UniqueId": "688",
+    "IsGlobal": true
+  },
+  {
+    "Name": "Blanc, the One-Winged Doll",
+    "Id": "1126",
+    "UniqueId": "544",
+    "IsGlobal": true
   }
 ]

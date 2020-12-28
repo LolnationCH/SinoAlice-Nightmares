@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace SinoAlice_Nightmares.Objects
 {
-  public class NightmareInfo
+  public class NightmareInfo : NightmareBase
   {
-    private string image_path;
-    private string name;
     private int summoning_time;
     private int summoned_time;
+    private int rarity;
+    private string icon;
 
-    public string Image_path { get => image_path; set => image_path = value; }
-    public string Name { get => name; set => name = value; }
+    public string ImagePath { get => $"Images\\CardS{(icon.Length < 4 ? "0" + icon : icon)}.png"; }
+    public string ImageUrl { get => $"https://sinoalice.game-db.tw/images/card/CardS{(icon.Length < 4 ? "0" + icon : icon)}.png"; }
     public int Summoning_time { get => summoning_time; set => summoning_time = value; }
     public int Summoned_time { get => summoned_time; set => summoned_time = value; }
+    public int Rarity { get => rarity; set => rarity = value; }
+    public string Icon { get => icon; set => icon = value; }
   }
 }

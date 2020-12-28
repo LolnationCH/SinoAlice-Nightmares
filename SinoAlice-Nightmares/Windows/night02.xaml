@@ -1,0 +1,42 @@
+﻿<Window x:Class="SinoAlice_Nightmares.Windows.night02"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SinoAlice_Nightmares.Windows"
+        mc:Ignorable="d"
+        ResizeMode="CanResizeWithGrip"
+        Title="night02" Height="450" Width="800">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="50"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="80"/>
+      <ColumnDefinition Width="80"/>
+      <ColumnDefinition Width="80"/>
+      <ColumnDefinition Width="80"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="30"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="40"/>
+    </Grid.RowDefinitions>
+
+    <Label Content="Name : " HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+    <TextBox x:Name="config_box" Grid.Column="1" HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="" VerticalAlignment="Center" Margin="0,0,10,0" Grid.ColumnSpan="4"/>
+
+    <ScrollViewer Grid.ColumnSpan="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,10,0" Grid.RowSpan="2" Grid.Row="1">
+      <StackPanel x:Name="Nightmare_Stack" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+      </StackPanel>
+    </ScrollViewer>
+
+    <Button x:Name="MoveUp_btn" Content="˄" Grid.Column="5" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Bottom" Margin="5,0,5,5" Click="MoveUp_btn_Click"/>
+    <Button x:Name="MoveDown_btn" Content="˅" Grid.Column="5" HorizontalAlignment="Stretch" Grid.Row="2" VerticalAlignment="Top" Margin="5,5,5,0" Click="MoveDown_btn_Click"/>
+
+    <Button x:Name="Remove_btn" Content="Remove" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="3" VerticalAlignment="Stretch" Margin="5" Click="Remove_btn_Click"/>
+    <Button x:Name="Add_btn" Content="Add" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="3" VerticalAlignment="Stretch" Margin="5" Click="Add_btn_Click"/>
+    <Button x:Name="Save_btn" Content="Save" Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="3" VerticalAlignment="Stretch" Margin="5" Click="Save_btn_Click"/>
+    <Button x:Name="Cancel_btn" Content="Cancel" Grid.Column="5" HorizontalAlignment="Stretch" Grid.Row="3" VerticalAlignment="Stretch" Margin="5" Click="Cancel_btn_Click"/>
+  </Grid>
+</Window>
